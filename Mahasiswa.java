@@ -1,42 +1,36 @@
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.util.*;
-import java.io.*;
-import java.text.*;
 
-class Mahasiswa extends User {
+public class Mahasiswa extends User {
   private String NIM;
-  private ArrayList<Project> completedProjects;
+  private String programStudi;
 
-  public Mahasiswa(String NIM, String name, String department, String email, String password) {
-      super(name, department, email, password);
+  public Mahasiswa(String NIM, String name, String programStudi, String email, String password) {
+      super(name, email, password);
       this.NIM = NIM;
-      this.completedProjects = new ArrayList<>();
+      this.programStudi = programStudi;
   }
 
   public String getNIM() {
       return NIM;
   }
 
+  public String getProgramStudi() {
+      return programStudi;
+  }
+  public String getPassword() {
+    return super.getPassword();
+}
+  
+
   public void viewProfile() {
-      StringBuilder profile = new StringBuilder("Profile:\n");
+      StringBuilder profile = new StringBuilder();
       profile.append("NIM: ").append(NIM).append("\n");
-      profile.append("Name: ").append(name).append("\n");
-      profile.append("Department: ").append(department).append("\n");
-      profile.append("Completed Projects:\n");
-      for (Project project : completedProjects) {
-          profile.append("  - ").append(project.getProjectName()).append(": ").append(project.getJobDesk()).append("\n");
+      profile.append("Name: ").append(getName()).append("\n");
+      profile.append("Program Studi: ").append(programStudi).append("\n");
+      profile.append("Projects Completed:\n");
+      for (Project project : getCompletedProjects()) {
+          profile.append("  - ").append(project.getProjectName()).append(": ").append(project.getDescription()).append("\n");
       }
-      JOptionPane.showMessageDialog(null, profile.toString());
-  }
-
-  public void addCompletedProject(Project project) {
-      completedProjects.add(project);
-  }
-
-  @Override
-  public String toString() {
-      return NIM + "," + name + "," + department + "," + email + "," + password;
+      JOptionPane.showMessageDialog(null, profile.toString(), "Profile", JOptionPane.INFORMATION_MESSAGE);
   }
 }

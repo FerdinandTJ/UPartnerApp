@@ -1,21 +1,17 @@
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.util.*;
-import java.io.*;
-import java.text.*;
+import java.util.ArrayList;
+import java.util.List;
 
-class User {
-    protected String name;
-    protected String department;
-    protected String email;
-    protected String password;
+public abstract class User {
+    private String name;
+    private String email;
+    private String password;
+    private List<Project> completedProjects;
 
-    public User(String name, String department, String email, String password) {
+    public User(String name, String email, String password) {
         this.name = name;
-        this.department = department;
         this.email = email;
         this.password = password;
+        this.completedProjects = new ArrayList<>();
     }
 
     public String getName() {
@@ -25,4 +21,17 @@ class User {
     public String getEmail() {
         return email;
     }
+    public String getPassword(){
+      return password;
+    }
+
+    public List<Project> getCompletedProjects() {
+        return completedProjects;
+    }
+
+    public void addCompletedProject(Project project) {
+        completedProjects.add(project);
+    }
+
+    public abstract void viewProfile();
 }
