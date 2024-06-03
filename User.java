@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class User {
+public abstract class User implements UserInterface {
     private String name;
     private String email;
     private String password;
@@ -21,8 +21,9 @@ public abstract class User {
     public String getEmail() {
         return email;
     }
-    public String getPassword(){
-      return password;
+    
+    public String getPassword() {
+        return password;
     }
 
     public List<Project> getCompletedProjects() {

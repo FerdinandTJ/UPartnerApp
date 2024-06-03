@@ -1,7 +1,7 @@
 import java.io.*;
 import javax.swing.JOptionPane;
 
-public class ChatSystem {
+public class ChatSystem implements ChatInterface {
     private String chatFilePath;
 
     public ChatSystem(String chatFilePath) {

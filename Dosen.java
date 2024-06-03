@@ -66,11 +66,10 @@ public class Dosen extends User {
 }
 
 private void saveProjects() {
-    try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("projects.dat"))) {
+    try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("projects.txt"))) {
         oos.writeObject(projectList);
     } catch (IOException e) {
         JOptionPane.showMessageDialog(null, "Error saving projects!", "Error", JOptionPane.ERROR_MESSAGE);
     }
 }
   }
-
