@@ -1,0 +1,4 @@
+1202,randi,ilmu komputer,randi@gmail.com,randi
+123123,ariana,ilmu komputer,ariana@gmail.com,ariana
+123123,tasmi,kalkulus,tasmi@gmail.com,tasmi
+213123,test,test,test@gmail.com,test
