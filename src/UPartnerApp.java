@@ -663,7 +663,7 @@ class ProjectApplication implements Serializable {
     public String getRequirements() {
         return requirements;
     }
-
+   
     public String getReason() {
         return reason;
     }
